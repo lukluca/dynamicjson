@@ -15,6 +15,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.lukluca.fileutility.FileManager;
+
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity
@@ -62,11 +64,13 @@ public class MainActivity extends AppCompatActivity
         mRecyclerView.setLayoutManager(mLayoutManager);
 
         // specify an adapter (see also next example)
+        FileManager fileManager = new FileManager(this);
+        int num = fileManager.getNumberOfJsonFile();
         ArrayList<String> myDataset = new ArrayList<>();
-        myDataset.add(0, "casa");
-        myDataset.add(1, "pippo");
-        myDataset.add(2, "letto");
-        myDataset.add(3, "rete");
+
+        for(int count=0; count < num; count++){
+            myDataset.add(count, "casa" + count);
+        }
 
         mAdapter = new JsonTableRecyclerView(myDataset);
         mRecyclerView.setAdapter(mAdapter);
