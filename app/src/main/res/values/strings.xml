@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">DynamicJson</string>
+    <string name="app_name">Dynamic Json</string>
 
     <!--navigation draver -->
     <string name="nav_home">Home</string>
