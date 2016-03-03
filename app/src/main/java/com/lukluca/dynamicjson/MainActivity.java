@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,6 +48,7 @@ public class MainActivity extends AppCompatActivity
         toggle.syncState();
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        navigationView.setCheckedItem(R.id.nav_home);
         navigationView.setNavigationItemSelectedListener(this);
 
         mRecyclerView = (RecyclerView) findViewById(R.id.my_recycler_view);
@@ -64,8 +66,9 @@ public class MainActivity extends AppCompatActivity
         myDataset.add(0, "casa");
         myDataset.add(1, "pippo");
         myDataset.add(2, "letto");
+        myDataset.add(3, "rete");
 
-        mAdapter = new JsonTableRecycleView(myDataset);
+        mAdapter = new JsonTableRecyclerView(myDataset);
         mRecyclerView.setAdapter(mAdapter);
     }
 
@@ -107,7 +110,7 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
+        if (id == R.id.nav_home) {
             // Handle the camera action
         } else if (id == R.id.nav_gallery) {
 

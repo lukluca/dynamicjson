@@ -8,7 +8,7 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-public class JsonTableRecycleView extends RecyclerView.Adapter<JsonTableRecycleView.ViewHolder> {
+public class JsonTableRecyclerView extends RecyclerView.Adapter<JsonTableRecyclerView.ViewHolder> {
     private ArrayList<String> mDataset;
 
     // Provide a reference to the views for each data item
@@ -38,19 +38,18 @@ public class JsonTableRecycleView extends RecyclerView.Adapter<JsonTableRecycleV
     }
 
     // Provide a suitable constructor (depends on the kind of dataset)
-    public JsonTableRecycleView(ArrayList<String> myDataset) {
+    public JsonTableRecyclerView(ArrayList<String> myDataset) {
         mDataset = myDataset;
     }
 
     // Create new views (invoked by the layout manager)
     @Override
-    public JsonTableRecycleView.ViewHolder onCreateViewHolder(ViewGroup parent,
+    public JsonTableRecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent,
                                                    int viewType) {
         // create a new view
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_json, parent, false);
         // set the view's size, margins, paddings and layout parameters
-        ViewHolder vh = new ViewHolder(v);
-        return vh;
+        return new ViewHolder(v);
     }
 
     // Replace the contents of a view (invoked by the layout manager)
