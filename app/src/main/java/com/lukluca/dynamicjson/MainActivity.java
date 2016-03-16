@@ -65,11 +65,10 @@ public class MainActivity extends AppCompatActivity
 
         // specify an adapter (see also next example)
         FileManager fileManager = new FileManager(this);
-        int num = fileManager.getNumberOfJsonFile();
         ArrayList<String> myDataset = new ArrayList<>();
 
-        for(int count=0; count < num; count++){
-            myDataset.add(count, "casa" + count);
+        for(int count=0; count < fileManager.getNumberOfJsonFile(); count++){
+            myDataset.add(count,fileManager.getNameOfJsonFiles()[count]);
         }
 
         mAdapter = new JsonTableRecyclerView(myDataset);
