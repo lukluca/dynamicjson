@@ -17,12 +17,10 @@ public class JsonTableRecyclerView extends RecyclerView.Adapter<JsonTableRecycle
     public class ViewHolder extends RecyclerView.ViewHolder {
         // each data item is just a string in this case
         public TextView txtHeader;
-        public TextView txtFooter;
 
         public ViewHolder(View v) {
             super(v);
             txtHeader = (TextView) v.findViewById(R.id.firstLine);
-            txtFooter = (TextView) v.findViewById(R.id.secondLine);
         }
     }
 
@@ -65,8 +63,6 @@ public class JsonTableRecyclerView extends RecyclerView.Adapter<JsonTableRecycle
                 remove(name);
             }
         });
-
-        holder.txtFooter.setText("Footer: " + mDataset.get(position));
 
     }
 
