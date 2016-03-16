@@ -12,7 +12,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginRight="6dip"
         android:contentDescription="Json icon"
-        android:src="@mipmap/ic_launcher" />
+        android:src="@drawable/ic_insert_drive_file_24dp" />
 
     <TextView
         android:id="@+id/secondLine"
